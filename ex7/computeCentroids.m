@@ -26,12 +26,14 @@ centroids = zeros(K, n);
 % Note: You can use a for-loop over the centroids to compute this.
 %
 
+val = zeros(1, n);
+num = 0;
 
-
-
-
-
-
+for i = 1:K
+    dist = sum(X(find(idx==i),:));
+    len = (size(X(find(idx==i)),1));
+    centroids(i,:) = 1 ./ len .* dist;
+end
 
 % =============================================================
 
